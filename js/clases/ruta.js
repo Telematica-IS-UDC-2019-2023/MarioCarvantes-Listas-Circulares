@@ -35,7 +35,7 @@ export default class Ruta{
         }
     }
 
-    eliminarB(nombre){
+    EliminarB(nombre){
         let t = this.inicio
 
         if(this.inicio.nombre === nombre && this.inicio.siguiente === this.inicio){
@@ -99,4 +99,18 @@ export default class Ruta{
         }
         return cont
     }
+
+
+    NuevoRecorrido(inicio,Hinicio,Hfinal){
+        let t= this.BuscarB(inicio)
+        let cont = t.nombre + "" + Hinicio.getHours() + "=" + Hinicio.getMinutes()
+        while(Hinicio.getHours()< Hfinal.getHours() || Hinicio.getMinutes() < Hfinal.getMinutes()){
+            t = t.siguiente
+            cont += " --" + t.nombre + "" + Hinicio.getHours() + "=" + Hinicio.getMinutes()
+    
+        }
+        return cont
+    }
+
+
 }
