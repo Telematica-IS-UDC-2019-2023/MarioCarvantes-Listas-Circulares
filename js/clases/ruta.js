@@ -101,12 +101,12 @@ export default class Ruta{
     }
 
 
-    NuevoRecorrido(inicio,Hinicio,Hfinal){
+    NuevoRecorrido(inicio,HInicio,HFinal){
         let t= this.BuscarB(inicio)
-        let cont = t.nombre + "" + Hinicio.getHours() + "=" + Hinicio.getMinutes()
-        while(Hinicio.getHours()< Hfinal.getHours() || Hinicio.getMinutes() < Hfinal.getMinutes()){
+        let cont = t.nombre + "" + HInicio.getHours() + "=" + HInicio.getMinutes()
+        while(HInicio.getHours()< HFinal.getHours() || HInicio.getMinutes() < HFinal.getMinutes()){
             t = t.siguiente
-            cont += " --" + t.nombre + "" + Hinicio.getHours() + "=" + Hinicio.getMinutes()
+            cont += " --" + t.nombre + "" + HInicio.getHours() + "=" + HInicio.getMinutes()
     
         }
         return cont
